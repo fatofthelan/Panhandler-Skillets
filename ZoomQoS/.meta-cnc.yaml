@@ -255,7 +255,7 @@ snippets:
                           <entry name="tunnel-traffic-group"/>
                         </groups>
                         <default-group>
-                          <per-tunnel-qos-profile>default</per-tunnel-qos-profile>
+                          <per-tunnel-qos-profile>Outbound-QoS</per-tunnel-qos-profile>
                         </default-group>
                       </tunnel-traffic>
                     </entry>
@@ -273,7 +273,7 @@ snippets:
                           <entry name="tunnel-traffic-group"/>
                         </groups>
                         <default-group>
-                          <per-tunnel-qos-profile>default</per-tunnel-qos-profile>
+                          <per-tunnel-qos-profile>Inbound-QoS</per-tunnel-qos-profile>
                         </default-group>
                       </tunnel-traffic>
                     </entry>
