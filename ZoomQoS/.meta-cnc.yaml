@@ -106,8 +106,8 @@ snippets:
 
   - name: outbound-qos
     xpath: /config/devices/entry[@name="localhost.localdomain"]/network/qos/profile
-{% if PANOS_VERSION == "9.1" %}
     element: |-
+      {% if PANOS_VERSION == "9.1" %}
         <entry name="Outbound-QoS">
                       <class-bandwidth-type>
                         <mbps>
@@ -175,8 +175,7 @@ snippets:
                         <egress-max>{{ UPLOAD_SPEED }}</egress-max>
                       </aggregate-bandwidth>
                     </entry>
-{% else %}
-    element: |-
+      {% else %}
         <entry name="Outbound-QoS">
                       <class>
                         <entry name="class1">
@@ -240,12 +239,12 @@ snippets:
                         <egress-max>{{ UPLOAD_SPEED }}</egress-max>
                       </aggregate-bandwidth>
                     </entry>
-{% endif %}                    
+      {% endif %}                    
 
   - name: inbound-qos
     xpath: /config/devices/entry[@name="localhost.localdomain"]/network/qos/profile
-{% if PANOS_VERSION == "9.1" %}
     element: |-
+      {% if PANOS_VERSION == "9.1" %}
         <entry name="Inbound-QoS">
                       <class-bandwidth-type>
                         <mbps>
@@ -313,8 +312,7 @@ snippets:
                         <egress-max>{{ DOWNLOAD_SPEED }}</egress-max>
                       </aggregate-bandwidth>
                     </entry>
-{% else %}  
-        element: |-
+      {% else %}  
         <entry name="Inbound-QoS">
                       <class>
                         <entry name="class1">
@@ -378,7 +376,7 @@ snippets:
                         <egress-max>{{ DOWNLOAD_SPEED }}</egress-max>
                       </aggregate-bandwidth>
                     </entry>
-{% endif %}                  
+      {% endif %}                  
 
   - name: interface-bindings
     xpath: /config/devices/entry[@name="localhost.localdomain"]/network/qos
